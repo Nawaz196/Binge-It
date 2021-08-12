@@ -1,0 +1,24 @@
+.card-container{    
+    
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+}
+
+.card-container :hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;    
+}
+
+
+.card-image img{
+    overflow : hidden;
+    height : 200px;
+}
+
+.cards {
+    display: flex; /* or inline-flex */
+    align-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }

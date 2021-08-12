@@ -1,0 +1,10 @@
+.show-case{
+
+    display: flex; /* or inline-flex */
+    align-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    justify-content: space-around;
+    row-gap: 15%;
+    
+}
