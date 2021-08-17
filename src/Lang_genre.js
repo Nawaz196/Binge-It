@@ -1,22 +1,27 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import Cards from './Cards';
 import axios from 'axios';
-import './MovieSearch.css';
+import { usercontext } from "./App";
 
-function MovieSearch(props) {
+
+function Lang_genre(props) {
 
     const [movies,setMovies] = useState([]);
-    console.log(props.item);
+    const {state, dispatch} = useContext(usercontext);
+    //console.log(props.item);
+    console.log(props.genre);
 
     useEffect(()=>{
 
-        axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=edf9e14b1b7e3bf5ad89f45c5c94d155&with_original_language=${props.item}&page=1`)
+        axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=edf9e14b1b7e3bf5ad89f45c5c94d155&with_original_language=${props.lang}&page=1}`)
         .then(res=>{
             console.log(res.data);
             // res.data.results.map((e)=>{
             //     console.log(e.title);
             // })
             setMovies(res.data.results);
+            dispatch({ type: "delete" });
+
         })
         .catch(err=>{
             console.log(err)
@@ -25,20 +30,25 @@ function MovieSearch(props) {
 
     },[])
 
-
     return movies.map((i) => (
         <div className="nawaz">
-            <Cards 
+            
+            <Cards
             title={i.title} 
             imgurl={i.poster_path}
             overview={i.overview}
             vote_average={i.vote_average}
+            //genre_id={i.genre_id}
 
-                
             />
+            
+            
+
+
         </div>
     ))
-    
-}
 
-export default MovieSearch
+
+}   
+
+export default Lang_genre

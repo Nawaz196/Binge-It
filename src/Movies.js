@@ -4,6 +4,9 @@ import { usercontext } from "./App";
 import axios from 'axios';
 import Cards from './Cards';
 import MovieSearch from './MovieSearch';
+import './MovieSearch.css';
+import Lang_genre from './Lang_genre';
+import "./Cads.css";
 
 function Movies() {
 
@@ -12,76 +15,100 @@ function Movies() {
     const [id,setId] = useState();
     const [st, setst] = useState(false);
 
-    // useEffect(()=>{
+    let obj1=[];
+    [...state.language].map((e)=>{
+        obj1.push(e);
+    });
 
-    //     axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=edf9e14b1b7e3bf5ad89f45c5c94d155&language=${id}`)
-    //     .then(res=>{
-    //         console.log(res.data);
-    //         // res.data.results.map((e)=>{
-    //         //     console.log(e.title);
-    //         // })
-    //         setMovies(res.data.results);
-    //     })
-    //     .catch(err=>{
-    //         console.log(err)
-    //     })      
+    let obj2=[];
+    [...state.genre].map((e)=>{
+        obj2.push(e);
+    });
 
-
-    // },[id])
-
-    // useEffect(() => {
-    //     effect
-    //     return () => {
-    //         cleanup
-    //     }
-    // }, [input])
-
-    // const idchange=(d)=>{
-    //     setId(d);
-    // }
-
-    //const newList = [...state.language];
+    // console.log([...state.language]);
+    // console.log([...state.genre]);
 
 
-    // useEffect(() => {
-        
-    //     setTimeout(() => {
-    //         setst(true);
-    //     }, 500);
-    // }, [])
+    
+    //dispatch({ type: "delete" });
+    console.log("Im Movies");
+    console.log([...state.language]);
+    //console.log([...state.genre]);
 
 
-    // const render = ()=>{
+    
 
-    //     let obj = [];
-    //     if(st){
-    //         obj.push(
+    
+
+  
+
+    //console.log(obj2);
+
+    // let obj3 = ["en","te","hi","kn","ta","ml"];
+    //     return obj3.map((item)=>(
+    //         obj2.map((item2)=>(
     //             <div>
-    //                 im Nawaz
+    //                 <Lang_genre lang={item} genre={item2}/>
     //             </div>
-    //         )
-    //     }
-    //     return obj;
-    // }
+    //         ))
+    //     ))
+
+
+
+
+
+    if((obj1.length===0) && (obj2.length===0))
+    {
+        
+        return (
+            <div>
+                You havent chose any filter.
+            </div>
+        )
+
+    }
+    else if((obj1.length==0) && (obj2.length !==0))
+    {
+        let obj3 = ["en","te","hi","kn","ta","ml"];
+        return obj3.map((item)=>(
+            obj2.map((item2)=>(
+                <div className="nawaz">
+                    <Lang_genre lang={item} genre={item2}/>
+                </div>
+            ))
+        ))
+        
+    }
+    else if(obj1.length!==0 && (obj2.length===0))
+    {
+        return obj1.map((item)=>(
+            <div className="nawaz">
+                <MovieSearch item={item}/>
+            </div>
+        ))
+        
+    }
+    else
+    {
+        
+
+       return obj1.map((item)=>(
+           obj2.map((item2)=>(
+               <div className="nawaz">
+                   <Lang_genre lang={item} genre={item2}/>
+               </div>
+           ))
+       ))
+       
+
+    }
+
 
   
 
 
-    return (
-        <div>
-
-        
-        {
-            [...state.language].map((id)=>{
-                console.log(typeof(id));
-                <MovieSearch item={id}/>
-            })
-        }
-        
-        
-            
-        </div>
-    )
+    
 }
+
 
 export default Movies

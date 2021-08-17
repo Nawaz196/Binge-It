@@ -27,6 +27,9 @@ function App() {
         {/* <SearchBar/> */}
         {/* <Cards/> */}
 
+      <div>
+        <h1>Welcome to Nawaz Movie Recommendation Page</h1>
+      </div>
 
         <usercontext.Provider value={{state,dispatch}}>
           <Welcome/>

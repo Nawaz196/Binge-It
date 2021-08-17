@@ -1,26 +1,25 @@
 import React from "react";
 import "./Cads.css";
 
-const numb = [1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
-const base_url = "https://image.tmdb.org/t/p/original"
 
-function Cards({title,imgurl}) {
+const base_url = "https://image.tmdb.org/t/p/original";
+
+function Cards({ title, imgurl,overview,vote_average }) {
+    //onsole.log(genre_id);
   return (
     <div className="cards">
+      <img src={`${base_url}${imgurl}`} alt={title} />
 
-        <div className="card-container">
-            <div className="card-image">
-                <img
-                    src={`${base_url}${imgurl}`}
-                    alt=""
-                />
-            </div>
+      <div className="card-info">
+          <h3>{title}</h3>
+          <span>{vote_average}</span>
+      </div>
 
-            <div className="card-title">
-                {title}
-            </div>
-        </div>
+      <div className="card-overview" >
+            <h2>Overview :</h2>
+            <p>{overview}</p>
+      </div>
     </div>
   );
 }
