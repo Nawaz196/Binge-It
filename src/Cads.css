@@ -6,6 +6,11 @@
     box-shadow: 3px 3px 5px;
     overflow: hidden;
     position: relative;
+    transition: transform 0.2s linear;
+}
+.cards :hover{
+    transform :scale(1.1);
+
 }
 
 .cards img {
@@ -15,6 +20,7 @@
 .nawaz{
     display : flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .card-info{

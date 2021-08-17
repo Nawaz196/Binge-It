@@ -28,7 +28,7 @@ function App() {
         {/* <Cards/> */}
 
       <div>
-        <h1>Welcome to Nawaz Movie Recommendation Page</h1>
+        <h1 className="bingeHome" >Binge It!</h1>
       </div>
 
         <usercontext.Provider value={{state,dispatch}}>

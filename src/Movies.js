@@ -6,7 +6,8 @@ import Cards from './Cards';
 import MovieSearch from './MovieSearch';
 import './MovieSearch.css';
 import Lang_genre from './Lang_genre';
-import "./Cads.css";
+
+import { Link } from 'react-router-dom';
 
 function Movies() {
 
@@ -38,7 +39,19 @@ function Movies() {
 
     
 
-    
+    const gg = ((e,item)=>{
+
+        let newL = e.filter((b)=>{
+            if(b!=item)
+            {
+                return b;
+            }
+        })
+
+        e = newL;  
+
+
+    })
 
   
 
@@ -62,6 +75,7 @@ function Movies() {
         
         return (
             <div>
+                {/* <Link to="/">Home</Link> */}
                 You havent chose any filter.
             </div>
         )
@@ -70,43 +84,82 @@ function Movies() {
     else if((obj1.length==0) && (obj2.length !==0))
     {
         let obj3 = ["en","te","hi","kn","ta","ml"];
-        return obj3.map((item)=>(
-            obj2.map((item2)=>(
-                <div className="nawaz">
-                    <Lang_genre lang={item} genre={item2}/>
-                </div>
-            ))
-        ))
+        return (
+            <div>
+
+            {/* <Link to="/">Home</Link> */}
+            {
+                obj3.map((item)=>(
+                    obj2.map((item2)=>(
+                        <div className="nawaz">
+                        <Lang_genre lang={item} genre={item2}/>
+                        </div>
+
+                    ))
+                ))
+            }
+                
+            </div>
+        ) 
         
     }
     else if(obj1.length!==0 && (obj2.length===0))
     {
-        return obj1.map((item)=>(
-            <div className="nawaz">
-                <MovieSearch item={item}/>
+        return (
+            <div>
+                {/* <Link to="/">Home</Link> */}
+                {
+                    obj1.map((item)=>(
+                        <div className="nawaz">
+                        <MovieSearch item={item}/>
+
+                        </div>
+                    ))
+                }
             </div>
-        ))
+        )
+
+        // return obj1.map((item)=>(
+        //     <div className="nawaz">
+            
+        //         <MovieSearch item={item}/>
+        //     </div>
+        // ))
         
     }
     else
-    {
+    {  
+        return (
+            <div>
+                {/* <Link to="/">Home</Link> */}
+                {
+                    obj1.map((item)=>(
+                        obj2.map((item2)=>(
+                            <div className="nawaz">
+                                <Lang_genre lang={item} genre={item2}/>
+                            </div>
+                        ))
+                    ))
+
+                }
+            </div>
+        )  
+
+    // return obj1.map((item)=>(
+    //     obj2.map((item2)=>(
+    //      <div className="nawaz">
+    //      <Lang_genre lang={item} genre={item2}/>
+    //      </div>
+            
+    //     ))
+    //     //(gg(state.language,item))
+
+    // ))
         
-
-       return obj1.map((item)=>(
-           obj2.map((item2)=>(
-               <div className="nawaz">
-                   <Lang_genre lang={item} genre={item2}/>
-               </div>
-           ))
-       ))
-       
-
     }
 
 
-  
-
-
+    
     
 }
 

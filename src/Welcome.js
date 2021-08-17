@@ -9,7 +9,8 @@ import {
 import { usercontext } from "./App";
 import Movies from "./Movies";
 import { reducer } from "./Reducer";
-import "./Cads.css";
+
+
 
 const Form = () => {
   const { state, dispatch } = useContext(usercontext);
@@ -90,95 +91,95 @@ const Form = () => {
       }
     }
 
-    // if (e === "action") {
-    //   fil.action = !fil.action;
-    //   if (fil.action) {
-    //     dispatch({ type: "actionadd" });
-    //   } else {
-    //     dispatch({ type: "actionremove" });
-    //   }
-    // }
+    if (e === "action") {
+      fil.action = !fil.action;
+      if (fil.action) {
+        dispatch({ type: "actionadd" });
+      } else {
+        dispatch({ type: "actionremove" });
+      }
+    }
 
-    // if (e === "adventure") {
-    //   fil.adventure = !fil.adventure;
-    //   if (fil.adventure) {
-    //     dispatch({ type: "adventureadd" });
-    //   } else {
-    //     dispatch({ type: "adventureremove" });
-    //   }
-    // }
+    if (e === "adventure") {
+      fil.adventure = !fil.adventure;
+      if (fil.adventure) {
+        dispatch({ type: "adventureadd" });
+      } else {
+        dispatch({ type: "adventureremove" });
+      }
+    }
 
-    // if (e === "comedy") {
-    //   fil.comedy = !fil.comedy;
-    //   if (fil.comedy) {
-    //     dispatch({ type: "comedyadd" });
-    //   } else {
-    //     dispatch({ type: "comedyremove" });
-    //   }
-    // }
+    if (e === "comedy") {
+      fil.comedy = !fil.comedy;
+      if (fil.comedy) {
+        dispatch({ type: "comedyadd" });
+      } else {
+        dispatch({ type: "comedyremove" });
+      }
+    }
 
-    // if (e === "crime") {
-    //   fil.crime = !fil.crime;
-    //   if (fil.crime) {
-    //     dispatch({ type: "crimeadd" });
-    //   } else {
-    //     dispatch({ type: "crimeremove" });
-    //   }
-    // }
+    if (e === "crime") {
+      fil.crime = !fil.crime;
+      if (fil.crime) {
+        dispatch({ type: "crimeadd" });
+      } else {
+        dispatch({ type: "crimeremove" });
+      }
+    }
 
-    // if (e === "drama") {
-    //   fil.drama = !fil.drama;
-    //   if (fil.drama) {
-    //     dispatch({ type: "dramaadd" });
-    //   } else {
-    //     dispatch({ type: "dramaremove" });
-    //   }
-    // }
+    if (e === "drama") {
+      fil.drama = !fil.drama;
+      if (fil.drama) {
+        dispatch({ type: "dramaadd" });
+      } else {
+        dispatch({ type: "dramaremove" });
+      }
+    }
 
-    // if (e === "fantasy") {
-    //   fil.fantasy = !fil.fantasy;
-    //   if (fil.fantasy) {
-    //     dispatch({ type: "fantasyadd" });
-    //   } else {
-    //     dispatch({ type: "fantasyremove" });
-    //   }
-    // }
+    if (e === "fantasy") {
+      fil.fantasy = !fil.fantasy;
+      if (fil.fantasy) {
+        dispatch({ type: "fantasyadd" });
+      } else {
+        dispatch({ type: "fantasyremove" });
+      }
+    }
 
-    // if (e === "horror") {
-    //   fil.horror = !fil.horror;
-    //   if (fil.horror) {
-    //     dispatch({ type: "horroradd" });
-    //   } else {
-    //     dispatch({ type: "horrorremove" });
-    //   }
-    // }
+    if (e === "horror") {
+      fil.horror = !fil.horror;
+      if (fil.horror) {
+        dispatch({ type: "horroradd" });
+      } else {
+        dispatch({ type: "horrorremove" });
+      }
+    }
 
-    // if (e === "mystery") {
-    //   fil.mystery = !fil.mystery;
-    //   if (fil.mystery) {
-    //     dispatch({ type: "mysteryadd" });
-    //   } else {
-    //     dispatch({ type: "mysteryremove" });
-    //   }
-    // }
+    if (e === "mystery") {
+      fil.mystery = !fil.mystery;
+      if (fil.mystery) {
+        dispatch({ type: "mysteryadd" });
+      } else {
+        dispatch({ type: "mysteryremove" });
+      }
+    }
 
-    // if (e === "romance") {
-    //   fil.romance = !fil.romance;
-    //   if (fil.romance) {
-    //     dispatch({ type: "romanceadd" });
-    //   } else {
-    //     dispatch({ type: "romanceremove" });
-    //   }
-    // }
+    if (e === "romance") {
+      fil.romance = !fil.romance;
+      if (fil.romance) {
+        dispatch({ type: "romanceadd" });
+      } else {
+        dispatch({ type: "romanceremove" });
+      }
+    }
 
-    // if (e === "thriller") {
-    //   fil.thriller = !fil.thriller;
-    //   if (fil.thriller) {
-    //     dispatch({ type: "thrilleradd" });
-    //   } else {
-    //     dispatch({ type: "thrillerremove" });
-    //   }
-    // }
+    if (e === "thriller") {
+      fil.thriller = !fil.thriller;
+      if (fil.thriller) {
+        dispatch({ type: "thrilleradd" });
+      } else {
+        dispatch({ type: "thrillerremove" });
+      }
+    }
   };
 
   return (
@@ -368,28 +369,52 @@ const Form = () => {
         <br />
       </div>
 
-      <h1>{<Link to="/movies">Submit</Link>}</h1>
+      <h1>{<button className="materialButton"><Link to="/movies" className="link" >Submit</Link></button>}</h1>
     </form>
   );
 };
 
+function Home(){
+
+  return(
+    <div className="home">
+      <Form />
+      {/* <Link to="/form" className="link" >Form</Link> */}
+    </div>
+  )
+}
+
+
 function Welcome() {
+
+  const [check, setCheck] = useState(true);
+
   return (
-    <div className="main-form">
+    <div className="home">
       <Router>
         <div>
           <div>
-            <h2>
-              <Link to="/form">Form</Link>
-            </h2>
+
+          <h2 onClick={() => window.location.reload(true)}>
+            <Link to="/"  className="homeLink" >Home 🏠</Link>
+          </h2>
+            {/* <h2>
+              <Link to="/form" onClick={()=>{setCheck(false)}} >
+              {check ? <p>Form</p> :null}
+              </Link>
+            </h2> */}
           </div>
           <Switch>
-            <Route path="/form">
+            {/* <Route path="/form">
               <Form />
-            </Route>
+            </Route> */}
 
             <Route path="/movies">
               <Movies />
+            </Route>
+
+            <Route path="/">
+              <Home />
             </Route>
           </Switch>
         </div>

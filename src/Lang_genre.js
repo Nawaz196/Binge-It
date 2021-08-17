@@ -2,6 +2,7 @@ import React,{useState,useEffect,useContext} from 'react'
 import Cards from './Cards';
 import axios from 'axios';
 import { usercontext } from "./App";
+import "./Cads.css";
 
 
 function Lang_genre(props) {
@@ -13,14 +14,13 @@ function Lang_genre(props) {
 
     useEffect(()=>{
 
-        axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=edf9e14b1b7e3bf5ad89f45c5c94d155&with_original_language=${props.lang}&page=1}`)
+        axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=edf9e14b1b7e3bf5ad89f45c5c94d155&with_original_language=${props.lang}&page=1&with_genres=${props.genre}`)
         .then(res=>{
             console.log(res.data);
             // res.data.results.map((e)=>{
             //     console.log(e.title);
             // })
             setMovies(res.data.results);
-            dispatch({ type: "delete" });
 
         })
         .catch(err=>{

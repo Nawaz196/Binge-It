@@ -1,11 +1,89 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+body{
+  margin :0;
+  padding :0;
+  font-family: 'Architects Daughter', cursive;
   text-align: center;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,35,1) 32%, rgba(0,212,255,1) 100%);
-  max-height: fit-content;  
-  margin-top: 100px;
-    margin-right: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
+  
+  /* background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+   */
+
+   background-color: #21D4FD;
+background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
+
+
+
 }
 
+.Languages{
+  line-height: 200%;
+  font-size: 20px;
+}
+.Genres{
+  line-height: 150%;
+  font-size: 20px;
+}
+
+.materialButton{
+  background-color:greenyellow;
+  font-family: 'Architects Daughter', cursive;
+  width: 150px;
+  display: inline-block;
+  padding: 15px;
+  font-size: 27px;
+  outline: none;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+  border: none;
+  cursor: pointer;
+  border-radius: 35px;
+  transition: all 0.1s ease-in-out;
+}
+.materialButton:hover{
+  background-color: cyan!important;
+  color: #ffffff!important;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,.12);
+}
+
+.homeLink{
+  text-decoration: none;
+  color: black;
+
+}
+
+.bingeHome{
+
+  animation: fadding  linear 0.7s;
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: -20px;
+  
+}
+@keyframes fadding{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+
+.home {
+  height : 600px;
+  margin-bottom: -10%;
+  /* background-color: blue; */
+  padding: 20px;
+
+
+
+}
+
+.binge{
+  margin-top: 0px;
+  margin-bottom: -550px;
+  
+
+}

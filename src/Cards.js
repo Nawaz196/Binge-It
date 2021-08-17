@@ -4,11 +4,15 @@ import "./Cads.css";
 
 
 const base_url = "https://image.tmdb.org/t/p/original";
+var h = window.innerHeight;
 
 function Cards({ title, imgurl,overview,vote_average }) {
     //onsole.log(genre_id);
   return (
+    
     <div className="cards">
+    {/* {console.log(h)} */}
+  
       <img src={`${base_url}${imgurl}`} alt={title} />
 
       <div className="card-info">
@@ -20,7 +24,10 @@ function Cards({ title, imgurl,overview,vote_average }) {
             <h2>Overview :</h2>
             <p>{overview}</p>
       </div>
+  
+
     </div>
+    
   );
 }
 

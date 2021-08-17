@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Cards from './Cards';
 import axios from 'axios';
 import './MovieSearch.css';
+import "./Cads.css";
 
 function MovieSearch(props) {
 
